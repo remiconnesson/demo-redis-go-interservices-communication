@@ -1,0 +1,11 @@
+services:
+  publisher:
+    build: ./publisher
+    depends_on:
+      - redis
+  subscriber:
+    build: ./subscriber
+    depends_on:
+      - redis
+  redis:
+    image: redis

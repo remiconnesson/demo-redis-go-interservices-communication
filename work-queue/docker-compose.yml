@@ -1,0 +1,13 @@
+services:
+  producer:
+    build: ./producer
+    depends_on:
+      - redis
+  consumer:
+    build: ./consumer
+    depends_on:
+      - redis
+    deploy:
+      replicas: 2
+  redis:
+    image: redis

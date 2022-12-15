@@ -7,5 +7,7 @@ services:
     build: ./subscriber
     depends_on:
       - redis
+    deploy:
+      replicas: 2
   redis:
     image: redis
